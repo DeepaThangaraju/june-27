@@ -6,7 +6,7 @@ import { authorize } from "../middleware/authorize.js";
 const router = express.Router();
 
 router.post("/", addUser);
-router.get("/", authenticate, authorize('admin'), allUser);
+router.get("/", allUser);
 router.post("/login", login);
 router.get("/:id", authenticate, authorize('admin'), getUserById);
 router.delete("/:id",authenticate,authorize('admin'), deleteUserById);
